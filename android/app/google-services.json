@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "986992486911",
+    "project_id": "townify-25bbd",
+    "storage_bucket": "townify-25bbd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:986992486911:android:85171c97e2b1566ec31fca",
+        "android_client_info": {
+          "package_name": "com.example.townify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdEnw9qIBUw6G_rmMwsI9aE34vnZeiLMM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
