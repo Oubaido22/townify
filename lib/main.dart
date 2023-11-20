@@ -1,14 +1,17 @@
-import 'package:townify/screens/intro_screens/welcome.dart';
 import 'package:flutter/material.dart';
-import 'firebase_options.dart';
-
+import 'firebase_options.dart' as firefire;
+import 'package:townify/firebase_options.dart';
+import 'package:townify/screens/intro_screens/welcome.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
+  runApp(const Townify());
+
+  print('on');
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const Townify());
+  print('c bon');
 }
 
 class Townify extends StatelessWidget {
