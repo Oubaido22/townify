@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:townify/screens/intro_screens/login.dart';
 import '../../utils/submit_button.dart';
 
 class Welcome extends StatefulWidget {
@@ -153,7 +154,7 @@ class _WelcomeState extends State<Welcome> {
                 ontouch: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Welcome()),
+                    MaterialPageRoute(builder: (context) => Login()),
                   );
                 },
               ),
