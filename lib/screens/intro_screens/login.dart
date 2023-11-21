@@ -1,6 +1,5 @@
 // ignore_for_file: unnecessary_const, prefer_const_constructors,
 
-//import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,6 +20,7 @@ import 'package:townify/screens/main/main_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 import '../../screens/studentprofile.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 // ignore: must_be_immutable
 class Login extends StatelessWidget {
@@ -42,7 +42,7 @@ class Login extends StatelessWidget {
   TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    /*void route() {
+    void route() {
       User? user = FirebaseAuth.instance.currentUser;
       var kk = FirebaseFirestore.instance
           .collection('users')
@@ -50,11 +50,11 @@ class Login extends StatelessWidget {
           .get()
           .then((DocumentSnapshot documentSnapshot) {
         if (documentSnapshot.exists) {
-          if (documentSnapshot.get('rool') == "Student") {
+          if (documentSnapshot.get('rool') == "User") {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => Welcome(),
+                builder: (context) => MainPage(),
               ),
             );
           } else {
@@ -95,7 +95,7 @@ class Login extends StatelessWidget {
           }
         }
       }
-    }*/
+    }
 
     return Material(
       child: Scaffold(
@@ -192,7 +192,7 @@ class Login extends StatelessWidget {
                           MaterialPageRoute(builder: (context) => MainPage()),
                         );
 
-                        //signIn(email, pass);
+                        signIn(email, pass);
                         print('sign in successufl');
                       },
                     ),

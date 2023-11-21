@@ -13,16 +13,16 @@ class Signup extends StatelessWidget {
 
   var isLoading = false;
   final _auth = FirebaseAuth.instance;
-  String selectedOption = 'Parent';
+  String selectedOption = 'User';
   late String email;
   late String pass;
   late String phone;
   var options = [
-    'Student',
-    'Parent',
+    'User',
+    'Basiness',
   ];
-  var currentItemSelected = "Parent";
-  var rool = "Parent";
+  var currentItemSelected = "User";
+  var rool = "User";
   void _submit() async {
     /*print(email);
     print(pass);
@@ -78,7 +78,7 @@ class Signup extends StatelessWidget {
                     ),
                     DropdownButtonFormField<String>(
                       value: selectedOption,
-                      items: ['Student', 'Parent'].map((String option) {
+                      items: ['User', 'Business'].map((String option) {
                         return DropdownMenuItem<String>(
                           value: option,
                           child: Text(
@@ -169,7 +169,7 @@ class Signup extends StatelessWidget {
                       fontSize: 20,
                       ontouch: () {
                         _submit();
-                        //signUp(email, pass, rool, phone: phone);
+                        signUp(email, pass, rool, phone: phone);
                         AwesomeDialog(
                                 context: context,
                                 dialogType: DialogType.success,
@@ -241,14 +241,14 @@ class Signup extends StatelessWidget {
       }).catchError((e) {});
     }
   }*/
-/*
+
   postDetailsToFirestore(String email, String rool, {String? phone}) async {
     FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
     var user = _auth.currentUser;
     CollectionReference ref = FirebaseFirestore.instance.collection('users');
     ref.doc(user!.uid).set({'email': email, 'rool': rool, 'phone': phone});
-  }*/
-/*
+  }
+
   void signUp(String email, String password, String role,
       {String? phone}) async {
     if (_formKey.currentState!.validate()) {
@@ -287,5 +287,5 @@ class Signup extends StatelessWidget {
       // If the email is in use, FirebaseAuth will throw an error, and we catch it here.
       return true;
     }
-  }*/
+  }
 }
