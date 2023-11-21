@@ -1,11 +1,11 @@
 //import 'package:townify/screens/intro_screens/add_new_student.dart';
-import 'package:townify/screens/studentprofile.dart';
 import 'package:townify/utils/constants.dart';
 import 'package:townify/utils/menu_list.dart';
 import 'package:townify/utils/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
+import 'studentprofile.dart';
 
 import 'announcement_msg.dart';
 
@@ -120,7 +120,7 @@ class _HomePageState extends State<HomePage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "CHILDREN PROFILES",
+                            "Favorites  ",
                             style: GoogleFonts.jost(
                                 color: Colors.black,
                                 fontSize: 18,
@@ -149,7 +149,7 @@ class _HomePageState extends State<HomePage> {
                                   );
                                 }),*/
                             childrenProfile(
-                                imageUrl: 'assets/images/eya.png',
+                                imageUrl: 'assets/images/maram.jpg',
                                 name: 'eya',
                                 ontouch: () {
                                   Navigator.push(
@@ -165,7 +165,7 @@ class _HomePageState extends State<HomePage> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => addNewStudent(),
+                                    builder: (context) => AnnouncementMsg(),
                                   ),
                                 );
                               },
@@ -227,9 +227,9 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                       AnnouncementWidget(
-                        title: "Parents Meeting",
+                        title: "new collection dropped",
                         subTitle:
-                            "Hello parents, friday morning 10:30 am you have parents meeting.",
+                            "Hello dear customers ; new collection with 50% to be dropped tommorow ",
                         time: "9:00 PM",
                         imageUrl: "assets/images/adh_school.png",
                         ontouch: () {
@@ -242,51 +242,51 @@ class _HomePageState extends State<HomePage> {
                         },
                       ),
                       AnnouncementWidget(
-                        title: "Tomorrow Holiday",
+                        title: "new collection dropped",
                         subTitle:
-                            "Hello parents, tomorrow will holiday because of heavy rain. stay safe.",
+                            "Hello dear customers ; new collection with 50% to be dropped tommorow",
                         time: "9:00 PM",
                         imageUrl: "assets/images/school1.png",
                         ontouch: () {},
                       ),
                       AnnouncementWidget(
-                        title: "Parents Meeting",
+                        title: "new collection dropped",
                         subTitle:
-                            "Hello parents, monday morning 10:30 am you have parents meeting.",
-                        time: "9:00 PM",
-                        imageUrl: "assets/images/school2.png",
-                        ontouch: () {},
-                      ),
-                      AnnouncementWidget(
-                        title: "Parents Meeting",
-                        subTitle:
-                            "Hello parents, friday morning 10:30 am you have parents meeting.",
-                        time: "9:00 PM",
-                        imageUrl: "assets/images/adh_school.png",
-                        ontouch: () {},
-                      ),
-                      AnnouncementWidget(
-                        title: "Parents Meeting",
-                        subTitle:
-                            "Hello parents, monday morning 10:30 am you have parents meeting.",
-                        time: "9:00 PM",
-                        imageUrl: "assets/images/school2.png",
-                        ontouch: () {},
-                      ),
-                      AnnouncementWidget(
-                        title: "Parents Meeting",
-                        subTitle:
-                            "Hello parents, monday morning 10:30 am you have parents meeting.",
+                            "Hello dear customers ; new collection with 50% to be dropped tommorow",
                         time: "9:00 PM",
                         imageUrl: "assets/images/school1.png",
                         ontouch: () {},
                       ),
                       AnnouncementWidget(
-                        title: "Parents Meeting",
+                        title: "new collection dropped",
                         subTitle:
-                            "Hello parents, monday morning 10:30 am you have parents meeting.",
+                            "Hello dear customers ; new collection with 50% to be dropped tommorow",
                         time: "9:00 PM",
-                        imageUrl: "assets/images/school2.png",
+                        imageUrl: "assets/images/school1.png",
+                        ontouch: () {},
+                      ),
+                      AnnouncementWidget(
+                        title: "new collection dropped",
+                        subTitle:
+                            "Hello dear customers ; new collection with 50% to be dropped tommorow",
+                        time: "9:00 PM",
+                        imageUrl: "assets/images/school1.png",
+                        ontouch: () {},
+                      ),
+                      AnnouncementWidget(
+                        title: "new collection dropped",
+                        subTitle:
+                            "Hello dear customers ; new collection with 50% to be dropped tommorow",
+                        time: "9:00 PM",
+                        imageUrl: "assets/images/school1.png",
+                        ontouch: () {},
+                      ),
+                      AnnouncementWidget(
+                        title: "new collection dropped",
+                        subTitle:
+                            "Hello dear customers ; new collection with 50% to be dropped tommorow",
+                        time: "9:00 PM",
+                        imageUrl: "assets/images/school1.png",
                         ontouch: () {},
                       ),
                     ],
