@@ -5,10 +5,11 @@ import 'package:classchool/screens/intro_screens/add_new_student.dart';
 import 'package:classchool/screens/intro_screens/welcome.dart';
 import 'package:classchool/screens/main/main_page.dart';
 import 'package:classchool/screens/studentprofile.dart';*/
+import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:google_fonts/google_fonts.dart';
-//import 'signup.dart';
+import 'signup.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:townify/screens/intro_screens/welcome.dart';
 //import 'forget_password.dart';
@@ -217,7 +218,7 @@ class Login extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Welcome(),
+                                builder: (context) => Signup(),
                               ),
                             );
                           },
