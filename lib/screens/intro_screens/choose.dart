@@ -1,7 +1,10 @@
 import 'package:townify/screens/intro_screens/signup.dart';
 import 'package:townify/utils/constants.dart';
+import 'package:townify/screens/intro_screens/busssignup.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import 'package:townify/database/user.dart';
 
 class Choose extends StatelessWidget {
@@ -54,7 +57,7 @@ class HomePage extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Signup()),
+                    MaterialPageRoute(builder: (context) => Busssignup()),
                   );
                 },
                 child: Text('Business'),
