@@ -25,11 +25,13 @@ Future<List<Map<String, dynamic>>> getallbusiness() async {
 
 Future<void> addToFavorite(String name) async {
   String busId = name;
-  final data = {"favorite": "true"};
-
+  final data = {
+    "user": FirebaseAuth.instance.currentUser!.email,
+    "business": busId,
+  };
   await FirebaseFirestore.instance
       .collection("business")
-      .doc(busId)
+      .doc()
       .set(data, SetOptions(merge: true));
 }
 
@@ -192,4 +194,45 @@ bool convExist(String busname) {
     onError: (e) => print("Error completing: $e"),
   );
   return exist;
+}
+
+Future<List<Map<String, dynamic>>> notification() async {
+  List<Map<String, dynamic>> notifications = [];
+
+  try {
+    // Fetch favorites
+    QuerySnapshot favoritesSnapshot = await FirebaseFirestore.instance
+        .collection("favorites")
+        .where("user", isEqualTo: FirebaseAuth.instance.currentUser!.email)
+        .get();
+
+    // Iterate over favorite documents
+    for (QueryDocumentSnapshot favoriteDoc in favoritesSnapshot.docs) {
+      String businessName = favoriteDoc["business"];
+
+      // Fetch business details
+      QuerySnapshot businessSnapshot = await FirebaseFirestore.instance
+          .collection("business")
+          .where("name", isEqualTo: businessName)
+          .get();
+
+      // Iterate over business documents
+      for (QueryDocumentSnapshot businessDoc in businessSnapshot.docs) {
+        // Fetch events
+        QuerySnapshot eventsSnapshot =
+            await businessDoc.reference.collection("events").get();
+
+        // Iterate over event documents
+
+        // Iterate over notification documents
+        eventsSnapshot.docs.forEach((eventDoc) {
+          notifications.add(eventDoc.data() as Map<String, dynamic>);
+        });
+      }
+    }
+  } catch (e) {
+    print("Error completing: $e");
+  }
+
+  return notifications;
 }

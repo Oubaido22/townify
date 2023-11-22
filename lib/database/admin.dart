@@ -58,3 +58,21 @@ Future<void> addforum(String name, String description) async {
 
   FirebaseFirestore.instance.collection("forum").doc(busId).set(data);
 }
+
+Future<void> addcategory(String category) async {
+  final data = {"category": category};
+
+  FirebaseFirestore.instance.collection("category").doc().set(data);
+}
+
+Future<void> deletecategory(String category) async {
+  FirebaseFirestore.instance
+      .collection("category")
+      .where("category", isEqualTo: category)
+      .get()
+      .then((snapshot) {
+    for (DocumentSnapshot ds in snapshot.docs) {
+      ds.reference.delete();
+    }
+  });
+}
