@@ -1,6 +1,7 @@
 import 'package:townify/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:townify/database/user.dart';
 
 class Attendence extends StatefulWidget {
   const Attendence({Key? key}) : super(key: key);
@@ -10,6 +11,19 @@ class Attendence extends StatefulWidget {
 }
 
 class _AttendenceState extends State<Attendence> {
+  late Future<List<Map<String, dynamic>>> businesses;
+
+  @override
+  void initState() {
+    super.initState();
+    businesses = getallbusiness();
+  }
+
+  void _addToFavorites(Map<String, dynamic> business) {
+    // Implement the functionality to add a business to favorites here
+    print('Adding to favorites: ${business['name']}');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,7 +45,32 @@ class _AttendenceState extends State<Attendence> {
                 color: Colors.white, fontSize: 25, fontWeight: FontWeight.w500),
           ),
         ),
-        body: Container(),
+        body: Center(
+          child: FutureBuilder<List<Map<String, dynamic>>>(
+            future: businesses,
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return ListView.builder(
+                  itemCount: snapshot.data!.length,
+                  itemBuilder: (context, index) {
+                    final business = snapshot.data![index];
+                    return ListTile(
+                      title: Text(business['name']),
+                      subtitle: Text(business['category']),
+                      trailing: IconButton(
+                        icon: Icon(Icons.star_border),
+                        onPressed: () => _addToFavorites(business),
+                      ),
+                    );
+                  },
+                );
+              } else if (snapshot.hasError) {
+                return Text("${snapshot.error}");
+              }
+              return CircularProgressIndicator();
+            },
+          ),
+        ),
       ),
     );
   }

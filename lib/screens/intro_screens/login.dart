@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:townify/screens/intro_screens/forget_password.dart';
+import 'package:townify/screens/intro_screens/choose.dart';
 import 'package:townify/screens/intro_screens/signup.dart';
 import 'package:townify/screens/intro_screens/welcome.dart';
 //import 'forget_password.dart';
@@ -13,7 +14,6 @@ import '../../utils/submit_button.dart' show Submit_Button;
 import '../../utils/textfield.dart' show CustomTextField, PasswordField;
 
 import '../../screens/announcement_msg.dart';
-import '../../screens/intro_screens/add_new_student.dart';
 import 'package:townify/screens/intro_screens/welcome.dart';
 import 'package:townify/screens/main/main_page.dart';
 
@@ -226,7 +226,7 @@ class Login extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Signup(),
+                                builder: (context) => Choose(),
                               ),
                             );
                           },

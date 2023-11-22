@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 Future<List<Map<String, dynamic>>> getallbusiness() async {
   return await FirebaseFirestore.instance
-      .collection("business")
+      .collection("Business")
       .where("status", isEqualTo: "verified")
       .get()
       .then(
@@ -16,7 +16,7 @@ Future<List<Map<String, dynamic>>> getallbusiness() async {
       querySnapshot.docs.forEach((doc) {
         business.add(doc.data() as Map<String, dynamic>);
       });
-
+      print(business);
       return business;
     },
     onError: (e) => print("Error completing: $e"),
