@@ -1,8 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:townify/firebase_options.dart';
-import 'package:flutter/material.dart';
 
 Future<void> registerbussiness(String description, String category) async {
   String busId = FirebaseAuth.instance.currentUser!.displayName.toString();
