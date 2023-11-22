@@ -11,7 +11,7 @@ Future<void> registerbussiness(String description, String category) async {
     "status": "waiting",
   };
 
-  await FirebaseFirestore.instance.collection("business").doc(busId).set(data);
+  await FirebaseFirestore.instance.collection("business").doc().set(data);
   print('done');
 }
 
