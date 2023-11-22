@@ -1,12 +1,14 @@
-//import 'package:townify/screens/features/attendence.dart';
-//import 'package:townify/screens/features/class_schedule.dart';
-//import 'package:townify/screens/features/communicate.dart';
-//import 'package:townify/screens/features/results.dart';
+// TODO Implement this library.// TODO Implement this library.// TODO Implement this library.//import 'package:townify/screens/features/attendence.dart';
+
 import 'package:townify/screens/intro_screens/login.dart';
 import 'package:townify/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-//import 'features/homework.dart';
+import 'features/homework.dart';
+import 'features/communicate.dart';
+import 'features/results.dart';
+import 'features/attendence.dart';
+import 'features/chat_page.dart';
 
 class StudentProfilePage extends StatefulWidget {
   const StudentProfilePage({Key? key}) : super(key: key);
@@ -32,7 +34,7 @@ class _StudentProfilePageState extends State<StudentProfilePage> {
           elevation: 0,
           backgroundColor: Colors.transparent,
           title: Text(
-            "Student Profile",
+            "Business Name",
             style: GoogleFonts.jost(
                 color: Colors.white, fontSize: 25, fontWeight: FontWeight.w500),
           ),
@@ -90,7 +92,7 @@ class _StudentProfilePageState extends State<StudentProfilePage> {
                                       height: 8,
                                     ),
                                     Text(
-                                      'Ad. No.',
+                                      'Category',
                                       style: GoogleFonts.jost(
                                           color: Colors.black,
                                           fontSize: 18,
@@ -102,7 +104,7 @@ class _StudentProfilePageState extends State<StudentProfilePage> {
                                       height: 8,
                                     ),
                                     Text(
-                                      'Class',
+                                      'Localisation ',
                                       style: GoogleFonts.jost(
                                           color: Colors.black,
                                           fontSize: 18,
@@ -112,15 +114,6 @@ class _StudentProfilePageState extends State<StudentProfilePage> {
                                     ),
                                     const SizedBox(
                                       height: 8,
-                                    ),
-                                    Text(
-                                      'School',
-                                      style: GoogleFonts.jost(
-                                          color: Colors.black,
-                                          fontSize: 18,
-                                          height: 1.2,
-                                          fontWeight: FontWeight.w500),
-                                      textAlign: TextAlign.start,
                                     ),
                                     const SizedBox(
                                       height: 8,
@@ -164,7 +157,7 @@ class _StudentProfilePageState extends State<StudentProfilePage> {
                                       height: 8,
                                     ),
                                     Text(
-                                      'glsi',
+                                      'Click Here ',
                                       style: GoogleFonts.jost(
                                           color: Colors.black87,
                                           fontSize: 18,
@@ -176,20 +169,6 @@ class _StudentProfilePageState extends State<StudentProfilePage> {
                                     ),
                                     const SizedBox(
                                       height: 8,
-                                    ),
-                                    SizedBox(
-                                      width: 200,
-                                      child: Text(
-                                        'fsb',
-                                        style: GoogleFonts.jost(
-                                            color: Colors.black87,
-                                            fontSize: 18,
-                                            height: 1.2,
-                                            fontWeight: FontWeight.w400),
-                                        maxLines: 2,
-                                        overflow: TextOverflow.ellipsis,
-                                        textAlign: TextAlign.start,
-                                      ),
                                     ),
                                   ],
                                 ),
@@ -217,7 +196,7 @@ class _StudentProfilePageState extends State<StudentProfilePage> {
                         child: CircleAvatar(
                           radius: 35,
                           backgroundImage:
-                              const AssetImage('assets/images/eya.png'),
+                              const AssetImage('assets/images/maram.jpg'),
                           child: GestureDetector(
                             onTap: () async {
                               await showDialog(
@@ -250,12 +229,12 @@ class _StudentProfilePageState extends State<StudentProfilePage> {
                     children: [
                       Features(
                         imageUrl: 'assets/images/homework.png',
-                        title: 'HOMEWORK',
+                        title: 'News',
                         ontouch: () {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Login(),
+                              builder: (context) => const HomeWork(),
                             ),
                           );
                         },
@@ -275,7 +254,7 @@ class _StudentProfilePageState extends State<StudentProfilePage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Login(),
+                              builder: (context) => const ChatPage(),
                             ),
                           );
                         },
@@ -323,7 +302,7 @@ class _StudentProfilePageState extends State<StudentProfilePage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Login(),
+                              builder: (context) => const Attendence(),
                             ),
                           );
                         },
@@ -343,7 +322,7 @@ class _StudentProfilePageState extends State<StudentProfilePage> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Login(),
+                              builder: (context) => const Results(),
                             ),
                           );
                         },

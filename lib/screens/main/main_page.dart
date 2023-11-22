@@ -55,7 +55,7 @@ class _MainPageState extends State<MainPage> {
                   icon: Icon(
                     Icons.person,
                   ),
-                  label: 'Chat Admin',
+                  label: 'Support',
                   backgroundColor: Colors.transparent,
                 ),
                 BottomNavigationBarItem(

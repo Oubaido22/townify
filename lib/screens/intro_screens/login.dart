@@ -1,15 +1,9 @@
 // ignore_for_file: unnecessary_const, prefer_const_constructors,
 
-/*import 'package:classchool/screens/announcement_msg.dart';
-import 'package:classchool/screens/intro_screens/add_new_student.dart';
-import 'package:classchool/screens/intro_screens/welcome.dart';
-import 'package:classchool/screens/main/main_page.dart';
-import 'package:classchool/screens/studentprofile.dart';*/
-//import 'package:firebase_ui_auth/firebase_ui_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:google_fonts/google_fonts.dart';
-//import 'signup.dart';
+
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:townify/screens/intro_screens/forget_password.dart';
 import 'package:townify/screens/intro_screens/signup.dart';
@@ -18,8 +12,15 @@ import 'package:townify/screens/intro_screens/welcome.dart';
 import '../../utils/submit_button.dart' show Submit_Button;
 import '../../utils/textfield.dart' show CustomTextField, PasswordField;
 
+import '../../screens/announcement_msg.dart';
+import '../../screens/intro_screens/add_new_student.dart';
+import 'package:townify/screens/intro_screens/welcome.dart';
+import 'package:townify/screens/main/main_page.dart';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
+import '../../screens/studentprofile.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 // ignore: must_be_immutable
 class Login extends StatelessWidget {
@@ -41,7 +42,7 @@ class Login extends StatelessWidget {
   TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    /*void route() {
+    void route() {
       User? user = FirebaseAuth.instance.currentUser;
       var kk = FirebaseFirestore.instance
           .collection('users')
@@ -49,11 +50,11 @@ class Login extends StatelessWidget {
           .get()
           .then((DocumentSnapshot documentSnapshot) {
         if (documentSnapshot.exists) {
-          if (documentSnapshot.get('rool') == "Student") {
+          if (documentSnapshot.get('rool') == "User") {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => Welcome(),
+                builder: (context) => MainPage(),
               ),
             );
           } else {
@@ -94,7 +95,7 @@ class Login extends StatelessWidget {
           }
         }
       }
-    }*/
+    }
 
     return Material(
       child: Scaffold(
@@ -186,7 +187,12 @@ class Login extends StatelessWidget {
                       fontSize: 22,
                       ontouch: () {
                         print('trying to sign in');
-                        //signIn(email, pass);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => MainPage()),
+                        );
+
+                        signIn(email, pass);
                         print('sign in successufl');
                       },
                     ),

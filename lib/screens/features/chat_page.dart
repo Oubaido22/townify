@@ -3,15 +3,14 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ChatAdmin extends StatefulWidget {
-  const ChatAdmin({Key? key}) : super(key: key);
+class ChatPage extends StatefulWidget {
+  const ChatPage({Key? key}) : super(key: key);
 
   @override
-  State<ChatAdmin> createState() => _ChatAdminState();
+  State<ChatPage> createState() => _ChatPageState();
 }
-// i love u jihad
 
-class _ChatAdminState extends State<ChatAdmin> {
+class _ChatPageState extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -39,7 +38,7 @@ class _ChatAdminState extends State<ChatAdmin> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Support",
+                    "Business Name",
                     style: GoogleFonts.jost(
                         color: Colors.white,
                         fontSize: 18,
