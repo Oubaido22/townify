@@ -7,8 +7,9 @@ import '../../utils/textfield.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
+import 'package:townify/database/business.dart';
 
-class Signup extends StatelessWidget {
+class Busssignup extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
 
   var isLoading = false;
@@ -39,7 +40,7 @@ class Signup extends StatelessWidget {
     _formKey.currentState!.save();
   }
 
-  Signup({Key? key}) : super(key: key);
+  Busssignup({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -76,52 +77,8 @@ class Signup extends StatelessWidget {
                     SizedBox(
                       height: 10,
                     ),
-                    DropdownButtonFormField<String>(
-                      value: selectedOption,
-                      items: ['User', 'Business'].map((String option) {
-                        return DropdownMenuItem<String>(
-                          value: option,
-                          child: Text(
-                            option,
-                            style: TextStyle(color: Colors.black),
-                          ),
-                        );
-                      }).toList(),
-                      onChanged: (String? newValue) {
-                        selectedOption = newValue!;
-                        currentItemSelected = newValue;
-                        rool = newValue;
-                      },
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Select an option';
-                        }
-
-                        return null;
-                      },
-                      decoration: InputDecoration(
-                        labelText: 'Select your role',
-                        hintText: 'Select your role',
-                        prefixIcon: Icon(Icons.add_card),
-                        contentPadding:
-                            EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-                        filled: true,
-                        fillColor: Colors.transparent,
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide(
-                              color: Colors.white), // Change border color here
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide: BorderSide(
-                              color: Colors.white), // Change border color here
-                        ),
-                      ),
-                      style: TextStyle(color: Colors.white),
-                    ),
                     CustomTextField(
-                      labelText: 'Enter your email',
+                      labelText: 'Enter your name',
                       hintText: 'Enter your name',
                       prefixIcon: Icons.school_outlined,
                       obscureText: false,
@@ -169,7 +126,7 @@ class Signup extends StatelessWidget {
                       fontSize: 20,
                       ontouch: () {
                         _submit();
-                        signUp(email, pass, rool, phone: phone);
+                        //registerbussiness(email);
                         AwesomeDialog(
                                 context: context,
                                 dialogType: DialogType.success,
