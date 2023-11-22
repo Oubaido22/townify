@@ -246,7 +246,13 @@ class Signup extends StatelessWidget {
     FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
     var user = _auth.currentUser;
     CollectionReference ref = FirebaseFirestore.instance.collection('users');
-    ref.doc(user!.uid).set({'email': email, 'rool': rool, 'phone': phone});
+
+    if (rool == 'Business') {
+      ref.doc(user!.uid).set(
+          {'email': email, 'rool': rool, 'phone': phone, 'status': 'waiting'});
+    } else {
+      ref.doc(user!.uid).set({'email': email, 'rool': rool, 'phone': phone});
+    }
   }
 
   void signUp(String email, String password, String role,
