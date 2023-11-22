@@ -12,6 +12,7 @@ Future<void> registerbussiness(String description, String category) async {
   };
 
   await FirebaseFirestore.instance.collection("business").doc(busId).set(data);
+  print('done');
 }
 
 Future<void> addEvent(String title, String content) async {
