@@ -4,12 +4,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:townify/firebase_options.dart';
 import 'package:flutter/material.dart';
 
-Future<void> registerbussiness(String description) async {
+Future<void> registerbussiness(String description, String category) async {
   String busId = FirebaseAuth.instance.currentUser!.displayName.toString();
   final data = {
     "name": busId,
     "description": description,
     "email": FirebaseAuth.instance.currentUser!.email,
+    "category": category,
     "status": "waiting",
   };
 
