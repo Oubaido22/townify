@@ -163,3 +163,18 @@ Future<void> sendMessage(String docname, String content) async {
 
   await conversation.collection("messages").doc().set(data);
 }
+
+Future<List<Map<String, dynamic>>> getallcategory() async {
+  return await FirebaseFirestore.instance.collection("category").get().then(
+    (querySnapshot) {
+      List<Map<String, dynamic>> category = [];
+
+      querySnapshot.docs.forEach((doc) {
+        category.add(doc.data() as Map<String, dynamic>);
+      });
+
+      return category;
+    },
+    onError: (e) => print("Error completing: $e"),
+  );
+}
